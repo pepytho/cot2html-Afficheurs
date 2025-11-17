@@ -135,10 +135,6 @@ body {
     color: #AAA;
 }
 
-.buttoniconi_dis {
-    background: #00917B;
-}
-
 .autohide {
     visibility: hidden;
     border-radius: 1vw;
@@ -911,12 +907,6 @@ h2 {
 .liste_cots tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
     cursor: pointer;
-}
-
-/* Ajouter une classe spécifique pour les textes des tableaux sur fond sombre */
-.dark-bg-text {
-    color: var(--couleur-texte-menu);
-    /* Blanc pour les textes sur fond sombre */
 }
 
 /* Styles for the trophy icon */

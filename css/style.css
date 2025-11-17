@@ -69,51 +69,7 @@
     --light-bg: rgb(42, 53, 70);
 }
 
-body.selection-page {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background: var(--light-bg);
-    padding-bottom: 4vh;
-}
 
-.competition-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.competition-card {
-    background: rgb(216, 214, 214);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-    padding: 2rem;
-}
-
-.competition-card:hover {
-    transform: translateY(-5px);
-}
-
-.competition-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.competition-card .competition-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-}
-
-.competition-card .competition-info i {
-    margin-right: 0.5rem;
-    color: var(--secondary-color);
-}
 
 /* Styles améliorés pour le sélecteur de taille de tableau */
 .tableau-size-selector {
@@ -319,16 +275,7 @@ body.selection-page {
     cursor: pointer;
 }
 
-/* Améliorer la visibilité de l'alerte quand il n'y a pas de tableau */
-.alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    padding: 15px;
-    border-radius: 4px;
-    margin: 20px 0;
-    text-align: center;
-    border: 1px solid #bee5eb;
-}
+
 
 /* Styles pour le slider de tableau */
 #tableauRangeSelector {
@@ -486,30 +433,7 @@ body.selection-page {
     }
 }
 
-/* Create L-shaped connectors for bracket flow */
-.bracket-connector-horizontal {
-    position: relative;
-    background: #FFFFFF;
-    height: 4px;
-    width: 100%;
-    border-radius: 2px;
-}
 
-.bracket-connector-vertical {
-    position: relative;
-    background: #FFFFFF;
-    width: 4px;
-    height: 100%;
-    border-radius: 2px;
-}
-
-.bracket-connector-corner {
-    position: relative;
-    background: #FFFFFF;
-    width: 4px;
-    height: 4px;
-    border-radius: 2px;
-}
 
 /* Clean background for the tableau container */
 #scrollme {
