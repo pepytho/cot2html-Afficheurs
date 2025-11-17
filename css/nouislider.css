@@ -183,7 +183,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 .noUi-pips {
   position: absolute;
-  color: #000
+  color: #000;
   font-size: 100%;
 }
 
@@ -225,7 +225,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .noUi-value-horizontal {
   -webkit-transform: translate(-50%, 50%);
   transform: translate(-50%, 50%);
-  font-size:min 5vh;
+  font-size: 12px;
 }
 .noUi-rtl .noUi-value-horizontal {
   -webkit-transform: translate(50%, 50%);
@@ -359,16 +359,4 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .action-icon:hover {
     opacity: 1;
-}
-
-/* Adjust flag size to match text size */
-.flag-icon {
-    display: inline-block;
-    width: 1em; /* Match the width to the text size */
-    height: 1em; /* Match the height to the text size */
-    background-size: contain;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    margin-right: 0.3em; /* Add slight spacing between flag and text */
 }

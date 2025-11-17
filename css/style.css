@@ -153,11 +153,6 @@ body.selection-page {
     background: #007a6a;
 }
 
-#tableauSizeSelector .noUi-pips {
-    color: #fff;
-    font-size: 12px;
-}
-
 #tableauSizeSelector .noUi-value {
     color: #fff;
     font-size: 12px;
@@ -226,9 +221,6 @@ body.selection-page {
 }
 
 /* Adaptation du bandeau pour différentes résolutions d'écran */
-/* .tblhd_top - defined in const.css */
-
-/* .tbl_banner - defined in const.css */
 
 /* Style pour la barre d'onglets de tableaux avec le sélecteur intégré */
 .tableaux-tabs {
@@ -238,15 +230,9 @@ body.selection-page {
     padding: 10px;
     background-color: #f5f5f5;
     border-bottom: 1px solid #e0e0e0;
+    border-radius: 4px;
     align-items: center;
-}
-
-.tableaux-tabs {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 10px;
+    margin: 10px 0 15px 0;
 }
 
 /* Le sélecteur de taille à gauche */
@@ -314,21 +300,7 @@ body.selection-page {
     box-sizing: border-box;
 }
 
-/* .myTableau - defined in const.css */
 
-/* .tblhd_tab - defined in const.css */
-
-/* S'assurer que les onglets de tableaux sont bien affichés */
-.tableaux-tabs {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 10px 0 15px 0;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-}
 
 /* Améliorer la visibilité du sélecteur de taille */
 #tableauSizeSelector {
@@ -404,20 +376,8 @@ body.selection-page {
     background: #00917B;
 }
 
-/* Ajuster l'espacement des valeurs */
-#tableauRangeSelector .noUi-pips {
-    padding: 10px 0;
-    height: 50px;
-}
-
 #tableauRangeSelector .noUi-value-horizontal {
     transform: translate(-50%, 20px);
-}
-
-/* Assurer que les valeurs sont bien espacées */
-#tableauRangeSelector .noUi-pips-horizontal {
-    height: 50px;
-    padding: 10px 0;
 }
 
 /* Positionnement spécifique pour chaque valeur */
@@ -468,8 +428,6 @@ body.selection-page {
 .trait_v::after {
     display: none;
 }
-
-/* Tableau connecting lines - defined in const.css */
 
 /* Suite de Tableaux Selector Styles */
 .suite-selector-container {
@@ -528,18 +486,6 @@ body.selection-page {
     }
 }
 
-/* Tournament bracket styles - defer to const.css */
-
-/* Connecting lines and score cells - defer to const.css */
-
-/* Match color boxes - defer to const.css for tYellow, tGreen, etc. */
-
-/* Tableau cells - defer to const.css */
-
-/* Connecting lines - defer to const.css */
-
-/* Enhanced connecting lines - defer to const.css */
-
 /* Create L-shaped connectors for bracket flow */
 .bracket-connector-horizontal {
     position: relative;
@@ -565,19 +511,9 @@ body.selection-page {
     border-radius: 2px;
 }
 
-/* Shadow overrides - defer to const.css */
-
-/* Table headers and spacing - defer to const.css */
-
 /* Clean background for the tableau container */
 #scrollme {
     background-color: transparent;
 }
 
-/* .fhtab - defined in const.css */
 
-/* myTableau table structure - defined in const.css */
-
-/* Match color box effects - defer to const.css */
-
-/* All remaining tournament bracket styles - defer to const.css */
