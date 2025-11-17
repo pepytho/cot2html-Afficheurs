@@ -181,6 +181,10 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tblhd_tab {
@@ -201,6 +205,8 @@ body {
     color: var(--couleur-texte-menu);
     display: block;
     padding: calc(8px * var(--rescale)) 0;
+    text-align: left;
+    width: 100%;
 }
 
 .tblhdpou>div {

@@ -1869,9 +1869,10 @@ function renderMyTableau( $xml , $detail, $fold, $titre, $selectedSuiteId = null
     } 
     
 
-      $tab  = "<div class='tblhd_top' onclick='mickey()'><span class='tbl_banner'>&#9776; $titre</span>";
+      $tab  = "<div class='tblhd_top' onclick='mickey()'>";
+      $tab .= "<span class='tbl_banner'>&#9776; $titre</span>";
       
-      // Add dropdown for suite selection
+      // Add dropdown for suite selection at same level as banner
     $suiteOptions = getSuiteDeTableauxOptions($xml);
     if (count($suiteOptions) > 1) {
         $currentSuiteId = $selectedSuiteId !== null ? $selectedSuiteId : '0'; // Default to main bracket
@@ -1888,7 +1889,7 @@ function renderMyTableau( $xml , $detail, $fold, $titre, $selectedSuiteId = null
         $tab .= "</div>";
     }
     
-    $tab .= "<br>";
+    $tab .= "</div>"; // Close tblhd_top
     $tab .= "<div class='tblhd_tab'><div></div>\n"; // This div seems to be an empty placeholder or for styling
     $fixed_height = isset($_GET['scroll']) && $_GET['scroll'] == '1' ? 'fhtab' : '';
 
