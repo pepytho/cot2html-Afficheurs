@@ -1,0 +1,60 @@
+/*
+     *  Gestion des drapeaux
+     */
+
+/* Basic flag icon sizing and positioning */
+.flag-icon {
+    display: inline-block;
+    width: 1.2em; /* Slightly wider than text height for better proportions */
+    height: 1em; /* Match the line height */
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    margin: 0 0.3em; /* Even spacing around flags */
+}
+
+/* Special sizes for specific contexts */
+.flag-icon-small {
+    width: 1em;
+    height: 0.8em;
+}
+
+.flag-icon-large {
+    width: 1.5em;
+    height: 1.2em;
+}
+
+/* Podium specific positioning */
+.podium1 {
+    position: absolute;
+    top: 10vh;
+    left: 33vw;
+    width: 18vw;
+    height: 15vw;
+}
+
+.podium2 {
+    position: absolute;
+    top: 55vh;
+    left: 1vw;
+    width: 18vw;
+    height: 15vw;
+}
+
+.podium3 {
+    position: absolute;
+    top: 55vh;
+    left: 40vw;
+    width: 18vw;
+    height: 15vw;
+}
+
+.podium4 {
+    position: absolute;
+    top: 55vh;
+    left: 70vw;
+    width: 18vw;
+    height: 15vw;
+}
+

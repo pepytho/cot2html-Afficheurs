@@ -1,0 +1,1583 @@
+/* Match color backgrounds for bracket matches (8 colors) */
+.match-color-1 {
+    background-color: var(--match-color-1);
+}
+
+.match-color-2 {
+    background-color: var(--match-color-2);
+}
+
+.match-color-3 {
+    background-color: var(--match-color-3);
+}
+
+.match-color-4 {
+    background-color: var(--match-color-4);
+}
+
+.match-color-5 {
+    background-color: var(--match-color-5);
+}
+
+.match-color-6 {
+    background-color: var(--match-color-6);
+}
+
+.match-color-7 {
+    background-color: #e0e0ff;
+}
+
+.match-color-8 {
+    background-color: #ffe0e0;
+}
+
+:root {
+    --couleur-trait-poule: #000;
+    --epaisseur-poule: 2px;
+    --epaisseur: 5px;
+    --couleur-trait: #FFFFFF;
+    --epaisseur-fin: 0.0px;
+    --couleur-trait-fin: black;
+    --tableau-height: 0px;
+    --couleur-case: #FAF9E5;
+    --couleur-score: #286E7C;
+    --font-size-score: 15px;
+    --font-size-arbitre: 13px;
+    --shift_finalist: 10px;
+    --couleur-case-titre: #FBFAEA;
+    --couleur-case-doc: #FBFAEA;
+    --couleur-titre: #CD0034;
+    --couleur-titre-comp: #273973;
+    --fixed-head-height-margin: 1.7em;
+    --couleur-fond: #0A1E3F;
+    /* Bleu marine */
+    --couleur-texte: #000;
+    /* Couleur de texte par défaut - noir */
+    --couleur-texte-menu: #fff;
+    /* Couleur de texte pour les menus - blanc */
+    --header-height: 10vh;
+    /* Height of header area (banner + controls) */
+    --match-color-1: rgba(255, 182, 193, 0.9);
+    /* Pink with transparency */
+    --match-color-2: rgba(255, 255, 150, 0.9);
+    /* Yellow with transparency */
+    --match-color-3: rgba(144, 238, 144, 0.9);
+    /* Green with transparency */
+    --match-color-4: rgba(173, 216, 230, 0.9);
+    /* Light blue with transparency */
+    --match-color-5: rgba(221, 160, 221, 0.9);
+    /* Purple with transparency */
+    --match-color-6: rgba(255, 218, 185, 0.9);
+    /* Peach with transparency */
+    --match-border-1: rgba(255, 100, 100, 0.9);
+    /* Red border */
+    --match-border-2: rgba(200, 200, 0, 0.9);
+    /* Dark yellow border */
+    --match-border-3: rgba(0, 150, 0, 0.9);
+    /* Dark green border */
+    --match-border-4: rgba(0, 100, 200, 0.9);
+    /* Dark blue border */
+    --match-border-5: rgba(150, 0, 150, 0.9);
+    /* Dark purple border */
+    --match-border-6: rgba(200, 100, 0, 0.9);
+    /* Dark orange border */
+}
+
+html {
+    font-family: "Arial", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: var(--couleur-texte-menu);
+    background: var(--couleur-fond);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.home {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 4vw;
+    color: var(--couleur-texte-menu);
+    /* Menu navigation principal */
+}
+
+body {
+    background-color: var(--couleur-fond);
+    /* Ajout de la couleur de fond au body également */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.zoom {
+    width: 80vw;
+    height: 5vw;
+}
+
+.buttonicon_dis,
+.buttonicon {
+    padding: 0;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 0.7vw;
+    font-size: 6vw;
+    vertical-align: middle;
+    margin: 0.5vw;
+}
+
+.buttonicon_dis {
+    color: #AAA;
+}
+
+.buttoniconi_dis {
+    background: #00917B;
+}
+
+.autohide {
+    visibility: hidden;
+    border-radius: 1vw;
+    padding: 1vw;
+    border: solid 0.5vw #00917B;
+    background: #42FEDC;
+    position: absolute;
+    top: 15vw;
+    left: 4vw;
+    margin-right: 6vw;
+    z-index: 10;
+}
+
+/***********************
+   CLASSEMENT COMBINE
+ ***********************/
+.tblhd_multicol {
+    margin-left: 0.3vw;
+    margin-right: 0.6vw;
+    display: inline-block;
+    position: relative;
+    border: 2px solid black;
+    background: #CCC;
+    padding: calc(15px * var(--rescale));
+    font-size: calc(13px * var(--rescale));
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.tblhdpou {
+    display: inline-block;
+    position: relative;
+    font-size: calc(12px * var(--rescale));
+}
+
+.tblhd {
+    display: inline-block;
+    position: relative;
+    font-size: calc(22px * var(--rescale));
+}
+
+.tblhd_top {
+    position: relative;
+    background-color: rgba(10, 30, 63, 0.98);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.tblhd_tab {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    font-size: calc(12px * var(--rescale));
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.tbl_banner {
+    height: 4vh;
+    font-size: 3vh;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color: var(--couleur-texte-menu);
+    display: block;
+    padding: calc(8px * var(--rescale)) 0;
+}
+
+.tblhdpou>div {
+    background: #CCC;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond gris */
+}
+
+.tblhd>div {
+    height: calc(20px * var(--rescale));
+    background: #CCC;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond gris */
+}
+
+.tblhd_tab>div {
+    height: calc(8px + 1px);
+    background: transparent;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: var(--couleur-texte-menu);
+}
+
+.tblhead {
+    font-weight: bold;
+    position: absolute;
+    top: 0.3em;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    margin-left: calc(-10px * var(--rescale));
+    padding-left: calc(3px * var(--rescale));
+    font-size: calc(10px * var(--rescale));
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond gris */
+}
+
+.tblhead_tab {
+    font-weight: bold;
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: calc(13px * var(--rescale));
+    color: var(--couleur-texte-menu);
+    background-color: rgba(10, 30, 63, 0.95);
+    padding: calc(8px * var(--rescale)) calc(5px * var(--rescale));
+    border-radius: calc(4px * var(--rescale));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div.listePoules {
+    background: none;
+}
+
+table.listeTireur td,
+table.listeTireur th {
+    padding-left: calc(8px * var(--rescale));
+    padding-right: calc(8px * var(--rescale));
+}
+
+table.listeTireur th {
+    font-weight: normal;
+}
+
+.VR {
+    border-right: 0.5px solid black;
+}
+
+table.listeTireur td.B {
+    font-weight: bold;
+    font-family: "Arial", Arial, sans-serif;
+}
+
+/* Row background colors */
+table.listeTireur tr.impairQ td {
+    background-color: #BBFFBB;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.pairQ td {
+    background-color: #DDFFDD;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.impairOL td,
+table.listeTireur tr.impairO td {
+    background-color: #FFBBBB;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.pairOL td,
+table.listeTireur tr.pairO td {
+    background-color: #FFDDDD;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.impairQL td {
+    background-color: #EEE;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.pairQL td {
+    background-color: #BBB;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.impairQC td {
+    background-color: #BBFFBB;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.pairQC td {
+    background-color: #DDFFDD;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.impairOC td {
+    background-color: #EEE;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.pairOC td {
+    background-color: #BBB;
+    color: var(--couleur-texte);
+    /* Noir pour contraste sur fond coloré */
+}
+
+table.listeTireur tr.pairE td,
+table.listeTireur tr.impairE td {
+    background-color: #888888;
+    color: var(--couleur-texte-menu);
+    /* Blanc pour contraste sur fond sombre */
+}
+
+table.listeTireur th.MID,
+table.listeTireur td.MID {
+    text-align: center;
+}
+
+.fh {
+    display: block;
+    height: calc(100vh - var(--footer-height, 40px) - var(--header-height, 10vh));
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fhtab {
+    display: block;
+    height: calc(100vh - var(--footer-height, 40px) - var(--header-height, 10vh));
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fhpou {
+    height: calc(100vh - var(--footer-height, 40px) - var(--fixed-head-height-margin));
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+table.listeTireur td.RIG {
+    text-align: right;
+}
+
+table.listeTireur td.LEF {
+    text-align: left;
+}
+
+table.listeTireur tr {
+    page-break-inside: avoid;
+}
+
+table.listeTireur {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    border-collapse: collapse;
+    color: ffffff;
+    /* Couleur du texte pour tous les tableaux par défaut */
+}
+
+@media screen {
+    table.listeTireur {
+        height: calc(94vh - var(--fixed-head-height-margin));
+    }
+}
+
+h1 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--couleur-titre);
+}
+
+h2 {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--couleur-titre-comp);
+}
+
+/*
+    UTILISE
+*/
+
+.poule_div {
+    padding-top: calc(10px * var(--rescale));
+    display: inline-block;
+    position: relative;
+    margin-right: calc(1vw * var(--rescale));
+}
+
+.poule_tab {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    box-shadow: 3px 3px 3px #CCC;
+}
+
+.poule_res {
+    background: var(--couleur-case-titre);
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: calc(14px * var(--rescale));
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.poule_arb {
+    font-family: "Arial", Arial, sans-serif;
+    font-size: calc(14px * var(--rescale));
+    font-weight: normal;
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.poule_doc {
+    font-family: "Arial Black", Arial, sans-serif;
+    background: var(--couleur-case-doc);
+    font-size: calc(20px * var(--rescale));
+    font-weight: bold;
+    padding: 2px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-top: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-bottom: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-right: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-left: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.poule_not,
+.poule_tit {
+    background: var(--couleur-case-titre);
+    border-top: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-right: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+}
+
+.poule_nom,
+.poule_sco,
+.poule_nor,
+.poule_not,
+.poule_dia {
+    font-size: calc(20px * var(--rescale));
+}
+
+.poule_nom {
+    background: var(--couleur-case);
+    font-weight: bold;
+    padding-right: calc(3px * var(--rescale));
+    padding-left: calc(3px * var(--rescale));
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.poule_tit {
+    font-size: calc(16px * var(--rescale));
+    text-align: center;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+.poule_not,
+.poule_nor {
+    font-size: calc(12px * var(--rescale));
+}
+
+.poule_nor {
+    background: var(--couleur-case);
+    padding-right: 5px;
+}
+
+.poule_nom,
+.poule_sco,
+.poule_nor,
+.poule_res,
+.poule_dia {
+    border-top: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-bottom: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+}
+
+.poule_not {
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.poule_tit,
+.poule_sco,
+.poule_dia {
+    width: calc(20px * var(--rescale));
+}
+
+.poule_res,
+.poule_sco,
+.poule_dia {
+    border-top: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-bottom: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-right: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    border-left: calc(var(--epaisseur-poule) * var(--rescale)) solid var(--couleur-trait-poule);
+    text-align: center;
+}
+
+.poule_dia {
+    -webkit-print-color-adjust: exact;
+    background: #666;
+}
+
+.poule_sco {
+    background: var(--couleur-case);
+}
+
+/* Base myTableau styles - consolidated */
+.myTableau {
+    border-collapse: separate;
+    border-spacing: calc(4px * var(--rescale)) calc(6px * var(--rescale));
+    font-family: "Arial", Arial, sans-serif;
+    padding: 0;
+    margin: 0 0 20px 0;
+    background-color: var(--couleur-fond);
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    table-layout: auto;
+}
+
+.myTableau td {
+    padding: 0;
+    vertical-align: middle;
+    font-size: calc(14px * var(--rescale));
+    line-height: 1.4;
+    border: none;
+    text-align: left;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.Tableau_net,
+.Tableau_neb,
+.Tableau_wet,
+.Tableau_web {
+    height: 2px;
+}
+
+.Tableau_neb_flip,
+.Tableau_neb {
+    min-width: calc(10px * var(--rescale));
+}
+
+.Tableau_net,
+.Tableau_net_flip {
+    min-width: calc(10px * var(--rescale));
+}
+
+/* NO CONNECTING LINES - All transparent spacers */
+.Tableau_nrt,
+.Tableau_nrt_flip,
+.Tableau_nrb,
+.Tableau_nrb_flip,
+.Tableau_nvb,
+.Tableau_nvb_flip,
+.Tableau_nvt,
+.Tableau_nvt_flip {
+    background: transparent;
+    border: none;
+    min-width: calc(20px * var(--rescale));
+    min-height: calc(10px * var(--rescale));
+    box-shadow: none;
+}
+
+.Tableau_wto_lef {
+    background: inherit;
+    border: inherit;
+    color: #000000;
+    padding: calc(10px * var(--rescale)) calc(12px * var(--rescale));
+    min-height: calc(45px * var(--rescale));
+    min-width: calc(180px * var(--rescale));
+    max-width: calc(350px * var(--rescale));
+    vertical-align: middle;
+    box-shadow: inherit;
+    border-radius: inherit;
+    font-weight: bold;
+    text-align: left;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+    margin: inherit;
+    position: relative;
+    line-height: 1.3;
+}
+
+.Tableau_wto_final,
+.Tableau_wto_lef_final {
+    transform: translate(calc(var(--shift_finalist) * var(--rescale)));
+    background: var(--couleur-case);
+    background: #CDF;
+    /* Overrides previous background */
+    text-align: center;
+}
+
+.Tableau_wto_lef_flip {
+    text-align: right;
+    background: var(--couleur-case);
+    border-top: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-right: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-left: var(--epaisseur-fin) solid var(--couleur-trait-fin);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+    padding: calc(8px * var(--rescale)) calc(6px * var(--rescale));
+    min-height: calc(35px * var(--rescale));
+    vertical-align: middle;
+}
+
+.Tableau_wto {
+    min-width: calc(110px * var(--rescale));
+    background: inherit;
+    border: inherit;
+    color: #000000;
+    padding: calc(12px * var(--rescale)) calc(16px * var(--rescale));
+    min-height: calc(50px * var(--rescale));
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: inherit;
+    border-radius: inherit;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: inherit;
+    position: relative;
+}
+
+.Tableau_wto_flip {
+    min-width: calc(50px * var(--rescale));
+    background: var(--couleur-case);
+    border-top: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-left: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+    padding: calc(8px * var(--rescale)) calc(6px * var(--rescale));
+    min-height: calc(35px * var(--rescale));
+    vertical-align: middle;
+    text-align: center;
+}
+
+.gros,
+.gros20,
+.gros30,
+.gros40 {
+    font-family: "Arial", Arial, sans-serif;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.gros_nobold {
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+.gros {
+    font-size: calc(3px + 13px * var(--rescale));
+}
+
+.gros20 {
+    font-size: calc(3px + 12px * var(--rescale));
+}
+
+.gros30 {
+    font-size: calc(2px + 11px * var(--rescale));
+}
+
+.gros40 {
+    font-size: calc(2px + 10px * var(--rescale));
+}
+
+.score {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: bold;
+    color: var(--couleur-score);
+    font-size: calc(4px + var(--font-size-score) * var(--rescale));
+    text-align: center;
+}
+
+.date,
+.piste {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: bold;
+    color: var(--couleur-score);
+    font-size: calc(4px + var(--font-size-score) * var(--rescale));
+    text-align: center;
+}
+
+.Tableau_wmi_lef {
+    min-width: calc(100px * var(--rescale));
+    font-size: calc(var(--font-size-arbitre) * var(--rescale));
+    color: var(--couleur-score);
+    text-align: right;
+    background: var(--couleur-case);
+    border-right: var(--epaisseur-fin) solid var(--couleur-trait-fin);
+    border-left: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.Tableau_wmi_lef_flip {
+    font-size: calc(var(--font-size-arbitre) * var(--rescale));
+    color: var(--couleur-score);
+    text-align: left;
+    background: var(--couleur-case);
+    border-right: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-left: var(--epaisseur-fin) solid var(--couleur-trait-fin);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.Tableau_wmi {
+    text-align: center;
+    background: var(--couleur-case);
+    border-right: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.Tableau_wmi_flip {
+    text-align: center;
+    background: var(--couleur-case);
+    border-left: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+}
+
+.Tableau_wbo_lef {
+    background: inherit;
+    border: inherit;
+    color: #000000;
+    padding: calc(10px * var(--rescale)) calc(12px * var(--rescale));
+    min-height: calc(45px * var(--rescale));
+    min-width: calc(180px * var(--rescale));
+    max-width: calc(350px * var(--rescale));
+    vertical-align: middle;
+    box-shadow: inherit;
+    border-radius: inherit;
+    font-weight: bold;
+    text-align: left;
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
+    margin: inherit;
+    position: relative;
+    line-height: 1.3;
+}
+
+.Tableau_wbo_lef_flip {
+    text-align: right;
+    background: var(--couleur-case);
+    border-bottom: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-right: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-left: var(--epaisseur-fin) solid var(--couleur-trait-fin);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+    padding: calc(8px * var(--rescale)) calc(6px * var(--rescale));
+    min-height: calc(35px * var(--rescale));
+    vertical-align: middle;
+}
+
+.Tableau_wbo_flip_final,
+.Tableau_wbo_lef_flip_final {
+    transform: translate(calc(-1 * var(--shift_finalist) * var(--rescale)));
+    text-align: center;
+    background: var(--couleur-case);
+    background: #CDF;
+    /* Overrides previous background */
+    border: none;
+}
+
+.Tableau_wbo {
+    background: inherit;
+    border: inherit;
+    color: #000000;
+    padding: calc(12px * var(--rescale)) calc(16px * var(--rescale));
+    min-height: calc(50px * var(--rescale));
+    min-width: calc(110px * var(--rescale));
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: inherit;
+    border-radius: inherit;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: inherit;
+    position: relative;
+}
+
+.Tableau_wbo_flip {
+    text-align: right;
+    background: var(--couleur-case);
+    border-bottom: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    border-left: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+    color: var(--couleur-texte);
+    /* Noir pour meilleure lisibilité */
+    padding: calc(8px * var(--rescale)) calc(6px * var(--rescale));
+    min-height: calc(35px * var(--rescale));
+    vertical-align: middle;
+    text-align: center;
+}
+
+.Tableau_nul {
+    border-right: calc(var(--epaisseur) * var(--rescale)) solid var(--couleur-trait);
+}
+
+.Tableau_sep {
+    min-width: calc(10px * var(--rescale));
+}
+
+.Tableau_wbo_lef,
+.Tableau_wmi_lef,
+.Tableau_wto_lef {
+    padding-left: calc(2px * var(--rescale));
+}
+
+.slider-zoom {
+    margin-top: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
+.slider-tableau {
+    margin-top: 5vh;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-bottom: 8vh;
+}
+
+/* Adding styles for dark mode compatibility */
+.liste_cots {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: var(--couleur-texte-menu);
+    /* Blanc sur fond foncé du sélecteur */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.liste_cots th {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #fff;
+    color: var(--couleur-texte-menu);
+    /* Blanc pour les en-têtes sur fond sombre */
+}
+
+.liste_cots td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--couleur-texte-menu);
+    /* Blanc pour les cellules sur fond sombre */
+}
+
+.liste_cots tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+/* Ajouter une classe spécifique pour les textes des tableaux sur fond sombre */
+.dark-bg-text {
+    color: var(--couleur-texte-menu);
+    /* Blanc pour les textes sur fond sombre */
+}
+
+/* Styles for the trophy icon */
+.trophy-icon {
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+.trophy-icon:hover {
+    transform: scale(1.2);
+}
+
+button:hover .trophy-icon {
+    fill: #005F4B;
+}
+
+/* Enhanced eliminatory bracket styling for better comprehension */
+.myTableau tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.myTableau tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Match grouping with clear white backgrounds */
+.match-group-1 {
+    background-color: var(--match-color-1);
+    border: 2px solid var(--match-border-1);
+    position: relative;
+}
+
+.match-group-2 {
+    background-color: var(--match-color-2);
+    border: 2px solid var(--match-border-2);
+    position: relative;
+}
+
+.match-group-3 {
+    background-color: var(--match-color-3);
+    border: 2px solid var(--match-border-3);
+    position: relative;
+}
+
+.match-group-4 {
+    background-color: var(--match-color-4);
+    border: 2px solid var(--match-border-4);
+    position: relative;
+}
+
+.match-group-5 {
+    background-color: var(--match-color-5);
+    border: 2px solid var(--match-border-5);
+    position: relative;
+}
+
+.match-group-6 {
+    background-color: var(--match-color-6);
+    border: 2px solid var(--match-border-6);
+    position: relative;
+}
+
+/* Enhanced match grouping with subtle indicators */
+.match-group-1::before,
+.match-group-2::before,
+.match-group-3::before,
+.match-group-4::before,
+.match-group-5::before,
+.match-group-6::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    z-index: 2;
+}
+
+.match-group-1::before {
+    background: var(--match-border-1);
+}
+
+.match-group-2::before {
+    background: var(--match-border-2);
+}
+
+.match-group-3::before {
+    background: var(--match-border-3);
+}
+
+.match-group-4::before {
+    background: var(--match-border-4);
+}
+
+.match-group-5::before {
+    background: var(--match-border-5);
+}
+
+.match-group-6::before {
+    background: var(--match-border-6);
+}
+
+/* Improve match pairing visual grouping */
+.Tableau_wto_lef,
+.Tableau_wbo_lef,
+.Tableau_wto_lef_flip,
+.Tableau_wbo_lef_flip {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.Tableau_wto,
+.Tableau_wbo,
+.Tableau_wto_flip,
+.Tableau_wbo_flip {
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Enhanced connecting lines visibility */
+.Tableau_nrt,
+.Tableau_nrb,
+.Tableau_nrt_flip,
+.Tableau_nrb_flip {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Better spacing for match blocks */
+.Tableau_sep {
+    min-width: calc(15px * var(--rescale));
+    background-color: transparent;
+}
+
+/* Improve final match visibility */
+.Tableau_wto_final,
+.Tableau_wto_lef_final,
+.Tableau_wbo_final,
+.Tableau_wbo_lef_final,
+.Tableau_wto_flip_final,
+.Tableau_wbo_flip_final,
+.Tableau_wto_lef_flip_final,
+.Tableau_wbo_lef_flip_final {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border-width: calc(var(--epaisseur) * 1.5 * var(--rescale));
+}
+
+/* Add
+itional match grouping enhancements */
+.Tableau_wto_lef.match-group-1,
+.Tableau_wto_lef.match-group-2,
+.Tableau_wto_lef.match-group-3,
+.Tableau_wto_lef.match-group-4,
+.Tableau_wto_lef.match-group-5,
+.Tableau_wto_lef.match-group-6 {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.Tableau_wbo_lef.match-group-1,
+.Tableau_wbo_lef.match-group-2,
+.Tableau_wbo_lef.match-group-3,
+.Tableau_wbo_lef.match-group-4,
+.Tableau_wbo_lef.match-group-5,
+.Tableau_wbo_lef.match-group-6 {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.Tableau_wto.match-group-1,
+.Tableau_wto.match-group-2,
+.Tableau_wto.match-group-3,
+.Tableau_wto.match-group-4,
+.Tableau_wto.match-group-5,
+.Tableau_wto.match-group-6 {
+    border-top-right-radius: 4px;
+}
+
+.Tableau_wbo.match-group-1,
+.Tableau_wbo.match-group-2,
+.Tableau_wbo.match-group-3,
+.Tableau_wbo.match-group-4,
+.Tableau_wbo.match-group-5,
+.Tableau_wbo.match-group-6 {
+    border-bottom-right-radius: 4px;
+}
+
+/* Subtle hover effect for match groups */
+.match-group-1:hover,
+.match-group-2:hover,
+.match-group-3:hover,
+.match-group-4:hover,
+.match-group-5:hover,
+.match-group-6:hover {
+    transform: translateX(1px);
+    transition: transform 0.2s ease;
+}
+
+/* Enhanced connecting lines for better comprehension */
+.Tableau_nrt,
+.Tableau_nrb,
+.Tableau_nvt,
+.Tableau_nvb {
+    background: #FFFFFF;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: calc(3px * var(--rescale));
+}
+
+/* Clean connecting lines without directional indicators */
+
+/* Clean connecting lines without effects */
+
+/* Enhanced tbr classes for clean bracket lines */
+.tbr {
+    background: #FFFFFF;
+    border-radius: calc(3px * var(--rescale));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.tbr.horizontal-line {
+    height: calc(6px * var(--rescale));
+    width: 100%;
+    min-height: calc(6px * var(--rescale));
+}
+
+.tbr.vertical-line {
+    width: calc(6px * var(--rescale));
+    height: 100%;
+    min-width: calc(6px * var(--rescale));
+}
+
+.bracket-flow-line {
+    background: #FFFFFF;
+    border-radius: calc(2px * var(--rescale));
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Clean separator elements */
+.Tableau_sep {
+    min-width: calc(20px * var(--rescale));
+    background-color: transparent;
+}
+
+/* Match boxes with light backgrounds and clear identification */
+/* Each match (2 fencers) gets a colored rectangle background */
+.tYellow {
+    background: linear-gradient(135deg, rgba(255, 255, 200, 0.4), rgba(255, 255, 180, 0.6));
+    color: #000000;
+    border: calc(3px * var(--rescale)) solid rgba(200, 200, 0, 0.8);
+    border-radius: calc(6px * var(--rescale));
+    box-shadow: 0 calc(3px * var(--rescale)) calc(10px * var(--rescale)) rgba(0, 0, 0, 0.2);
+    margin: calc(3px * var(--rescale));
+    position: relative;
+    padding: calc(8px * var(--rescale));
+}
+
+.tGreen {
+    background: linear-gradient(135deg, rgba(200, 255, 200, 0.4), rgba(180, 255, 180, 0.6));
+    color: #000000;
+    border: calc(3px * var(--rescale)) solid rgba(0, 150, 0, 0.8);
+    border-radius: calc(6px * var(--rescale));
+    box-shadow: 0 calc(3px * var(--rescale)) calc(10px * var(--rescale)) rgba(0, 0, 0, 0.2);
+    margin: calc(3px * var(--rescale));
+    position: relative;
+    padding: calc(8px * var(--rescale));
+}
+
+.tBlue {
+    background: linear-gradient(135deg, rgba(200, 220, 255, 0.4), rgba(180, 220, 255, 0.6));
+    color: #000000;
+    border: calc(3px * var(--rescale)) solid rgba(0, 100, 200, 0.8);
+    border-radius: calc(6px * var(--rescale));
+    box-shadow: 0 calc(3px * var(--rescale)) calc(10px * var(--rescale)) rgba(0, 0, 0, 0.2);
+    margin: calc(3px * var(--rescale));
+    position: relative;
+    padding: calc(8px * var(--rescale));
+}
+
+.tRed {
+    background: linear-gradient(135deg, rgba(255, 200, 200, 0.4), rgba(255, 180, 180, 0.6));
+    color: #000000;
+    border: calc(3px * var(--rescale)) solid rgba(200, 0, 0, 0.8);
+    border-radius: calc(6px * var(--rescale));
+    box-shadow: 0 calc(3px * var(--rescale)) calc(10px * var(--rescale)) rgba(0, 0, 0, 0.2);
+    margin: calc(3px * var(--rescale));
+    position: relative;
+    padding: calc(8px * var(--rescale));
+}
+
+.tPurple {
+    background: linear-gradient(135deg, rgba(230, 200, 255, 0.4), rgba(220, 180, 255, 0.6));
+    color: #000000;
+    border: calc(3px * var(--rescale)) solid rgba(150, 0, 150, 0.8);
+    border-radius: calc(6px * var(--rescale));
+    box-shadow: 0 calc(3px * var(--rescale)) calc(10px * var(--rescale)) rgba(0, 0, 0, 0.2);
+    margin: calc(3px * var(--rescale));
+    position: relative;
+    padding: calc(8px * var(--rescale));
+}
+
+.tOrange {
+    background: linear-gradient(135deg, rgba(255, 220, 180, 0.4), rgba(255, 200, 160, 0.6));
+    color: #000000;
+    border: calc(3px * var(--rescale)) solid rgba(200, 100, 0, 0.8);
+    border-radius: calc(6px * var(--rescale));
+    box-shadow: 0 calc(3px * var(--rescale)) calc(10px * var(--rescale)) rgba(0, 0, 0, 0.2);
+    margin: calc(3px * var(--rescale));
+    position: relative;
+    padding: calc(8px * var(--rescale));
+}
+
+/* Light connecting lines - subtle and clear */
+.tbr {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    box-shadow: none;
+    position: relative;
+    min-height: calc(2px * var(--rescale));
+    min-width: calc(2px * var(--rescale));
+}
+
+.tbb,
+.tbbr {
+    border: none;
+    background-color: transparent;
+}
+
+/* Connecting line cells - completely transparent, no borders */
+.Tableau_nrt,
+.Tableau_nrb,
+.Tableau_nvt,
+.Tableau_nvb {
+    background-color: transparent;
+    border: none;
+    min-width: calc(20px * var(--rescale));
+    min-height: calc(10px * var(--rescale));
+}
+
+.tscoref {
+    text-align: center;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: calc(8px * var(--rescale));
+    background-color: inherit;
+    font-size: calc(13px * var(--rescale));
+    line-height: 1.2;
+}
+
+/* Better spacing for piste and referee information */
+.match-info {
+    font-size: calc(11px * var(--rescale));
+    color: #333333;
+    text-align: center;
+    font-style: italic;
+    margin-top: calc(2px * var(--rescale));
+}
+
+/* Enhanced status display for clapou page */
+.status-qualifie {
+    font-weight: bold;
+    font-size: calc(1.2em + 2px);
+    color: #008000;
+    /* Green for qualified */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.status-elimine {
+    font-weight: bold;
+    font-size: calc(1.2em + 2px);
+    color: #CC0000;
+    /* Red for eliminated */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.status-abandon {
+    font-weight: bold;
+    font-size: calc(1.2em + 2px);
+    color: #FF8C00;
+    /* Orange for abandon */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.status-expulsion {
+    font-weight: bold;
+    font-size: calc(1.2em + 2px);
+    color: #8B0000;
+    /* Dark red for expulsion */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Tournament bracket with match boxes and connecting lines - styles consolidated above */
+
+.myTableau td {
+    padding: 0;
+    vertical-align: middle;
+    font-size: calc(10px * var(--rescale));
+    line-height: 1.2;
+    border: darkblue calc(var(--epaisseur) * 1.5 * var(--rescale));
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Connecting lines between matches */
+.Tableau_nrt,
+.Tableau_nrb,
+.Tableau_nvt,
+.Tableau_nvb,
+.Tableau_net,
+.Tableau_neb,
+.Tableau_wet,
+.Tableau_web,
+.Tableau_nem,
+.Tableau_sep {
+    background-color: transparent;
+    border: none;
+    min-width: calc(5px * var(--rescale));
+    min-height: calc(5px * var(--rescale));
+    position: relative;
+}
+
+/* Light and clear connecting lines for bracket flow */
+.Tableau_nrt,
+.Tableau_nrb {
+    background: white;
+    height: calc(5px * var(--rescale));
+    margin: calc(5px * var(--rescale)) 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Vertical connecting lines */
+.Tableau_nvt,
+.Tableau_nvb {
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 80%, transparent 100%);
+    width: calc(2px * var(--rescale));
+    margin: 0 calc(15px * var(--rescale));
+    border: none;
+    box-shadow: none;
+}
+
+/* Group matches visually - add spacing between different matches */
+.myTableau tr {
+    margin-bottom: calc(2px * var(--rescale));
+}
+
+/* Special spacing for match separation */
+.match-separator {
+    height: calc(10px * var(--rescale));
+    background-color: transparent;
+}
+
+/* Table headers with sticky positioning - stays visible during scroll */
+.myTableau thead {
+    position: sticky;
+    top: 0;
+    z-index: 95;
+}
+
+.myTableau thead tr {
+    background-color: rgba(10, 30, 63, 0.98);
+}
+
+.Tableau_TXX {
+    background-color: rgba(10, 30, 63, 0.98);
+    color: var(--couleur-texte-menu);
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    vertical-align: middle;
+    position: sticky;
+    top: 0;
+}
+
+/* Footer styles - Independent div at bottom of body */
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(10, 30, 63, 0.95);
+    /* Same as --couleur-fond with transparency */
+    color: var(--couleur-texte-menu);
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 12px;
+    font-family: "Arial", Arial, sans-serif;
+    border-top: 2px solid var(--couleur-trait);
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-footer a {
+    color: #42FEDC;
+    text-decoration: none;
+}
+
+.page-footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* Adjust body when footer is present */
+body.with-footer {
+    padding-bottom: var(--footer-height, 40px);
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .page-footer {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-footer {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+}
+
+/* Full screen display enhancements - styles consolidated in base myTableau above */
+
+/* Ensure main content uses full viewport with smooth scrolling */
+#scrollme {
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Remove any margins or padding that might prevent full screen */
+* {
+    box-sizing: border-box;
+}
+
+/* Ensure tables use full width */
+table.listeTireur {
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Adjust for footer when present */
+body.with-footer .fh,
+body.with-footer .fhtab,
+body.with-footer .fhpou {
+    height: calc(100vh - var(--footer-height, 40px) - var(--header-height, 10vh));
+}
+
+/* Hide scrollbars on main body to prevent double scrolling */
+body {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+    /* WebKit */
+    display: none;
+}
+
+/* Debug helper - fhtab styles already defined above */
+
+/* Ensure content doesn't get cut off at bottom - margin already in base myTableau */
+
+/* Scroll container spacing - already defined above */
+
+/*
+ Visual indicator for autoscroll state */
+#scrollme.user-interacting {
+    border-left: 4px solid #42FEDC;
+    transition: border-left 0.3s ease;
+}
+
+#scrollme.user-interacting::before {
+    content: "⏸️ Autoscroll paused - Click to resume";
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(66, 254, 220, 0.9);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Club display in tournament bracket - smaller font, max 10 chars */
+.club-name {
+    font-size: calc(0.4em * var(--rescale));
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.65);
+    font-style: italic;
+    margin-left: calc(2px * var(--rescale));
+    display: inline-block;
+    max-width: calc(80px * var(--rescale));
+    white-space: nowrap;
+    overflow: visible;
+}
+
+/* Light and subtle match connectors */
+.match-connector::after {
+    content: '';
+    position: absolute;
+    right: calc(-8px * var(--rescale));
+    top: 50%;
+    width: calc(16px * var(--rescale));
+    height: calc(1px * var(--rescale));
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%);
+    border: none;
+    box-shadow: none;
+}
+
+.horizontal-connector {
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 70%, transparent 100%);
+    height: calc(1px * var(--rescale));
+    border: none;
+    box-shadow: none;
+    margin: calc(15px * var(--rescale)) 0;
+}
+
+.vertical-connector {
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 70%, transparent 100%);
+    width: calc(1px * var(--rescale));
+    border: none;
+    box-shadow: none;
+    margin: 0 calc(18px * var(--rescale));
+}
+
+/* Enhanced match box styling - removed duplicate, using main definitions above */
+
+/* Hover effects for match boxes */
+.tYellow:hover,
+.tGreen:hover,
+.tBlue:hover,
+.tRed:hover,
+.tPurple:hover,
+.tOrange:hover {
+    transform: translateY(calc(-2px * var(--rescale)));
+    box-shadow: 0 calc(6px * var(--rescale)) calc(12px * var(--rescale)) rgba(0, 0, 0, 0.25);
+}

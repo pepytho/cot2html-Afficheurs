@@ -1,0 +1,48 @@
+.finalClassement {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    color: var(--couleur-texte);
+}
+
+.finalClassement th {
+    background-color: #1e3c64;
+    color: white;
+    padding: 10px 15px;
+    text-align: left;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: bold;
+}
+
+.finalClassement td {
+    padding: 8px 15px;
+    vertical-align: middle;
+}
+
+/* Style spécial pour les premiers du classement */
+.finalClassement tr:nth-child(1) td {
+    background-color: rgba(245, 211, 16, 0.959); /* Or */
+    font-size: 1.1em;
+}
+
+.finalClassement tr:nth-child(2) td {
+    background-color: rgba(192, 192, 192, 0.87); /* Argent */
+}
+
+.finalClassement tr:nth-child(3) td {
+    background-color: rgba(236, 161, 86, 0.836); /* Bronze */
+}
+
+/* Mise en évidence au survol des lignes */
+.finalClassement tr:hover td {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Ajustements responsifs */
+@media (max-width: 768px) {
+    .finalClassement th,
+    .finalClassement td {
+        padding: 5px 8px;
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,217 @@
+.competition-header {
+    background-color: rgba(10, 30, 63, 0.9); /* Bleu marine légèrement transparent */
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0056b3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-top-row, 
+.header-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.header-top-row {
+    margin-bottom: 8px;
+}
+
+.header-left {
+    font-weight: bold;
+    font-size: 1.2em;
+    min-width: 20%;
+    flex: 1;
+    text-align: left;
+}
+
+.header-center {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    flex: 2;
+    color: #ffcc00; /* Couleur or pour le titre */
+}
+
+.header-right {
+    font-style: italic;
+    min-width: 20%;
+    flex: 1;
+    text-align: right;
+}
+
+.header-info {
+    font-size: 1.3em;
+    text-align: center;
+    width: 60%;
+    color: #ffffff;
+}
+
+/* Styles pour les boutons d'en-tête */
+.header-buttons-left,
+.header-buttons-right {
+    flex: 1;
+    min-width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.header-buttons-left {
+    justify-content: flex-start;
+}
+
+.header-buttons-right {
+    justify-content: flex-end;
+}
+
+.header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.header-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    fill: currentColor;
+}
+
+/* Style spécial pour le logo BellePoule */
+.bellepoule-logo {
+    width: 20px !important;
+    height: 20px !important;
+    filter: invert(1); /* Rendre le logo blanc sur fond sombre */
+}
+
+/* Style pour le bouton plein écran */
+#fullscreen-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#fullscreen-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#fullscreen-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Style pour l'état plein écran actif */
+#fullscreen-button.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 204, 0, 0.8);
+    color: #ffcc00;
+}
+
+#fullscreen-button.active .bellepoule-logo {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(30deg);
+}
+
+/* Amélioration pour mobile et tablette */
+@media (max-width: 768px) {
+    #fullscreen-button {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    
+    #fullscreen-button .bellepoule-logo {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
+/* Spécial pour Android TV et grands écrans */
+@media (min-width: 1200px) {
+    #fullscreen-button {
+        padding: 8px 15px;
+        font-size: 1.1em;
+    }
+    
+    #fullscreen-button .bellepoule-logo {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+    .competition-header {
+        padding: 8px;
+    }
+    
+    .header-top-row, 
+    .header-bottom-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header-left, 
+    .header-center, 
+    .header-right {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .header-left {
+        order: 1;
+    }
+    
+    .header-center {
+        order: 0;
+        margin-bottom: 8px;
+    }
+    
+    .header-right {
+        order: 2;
+    }
+    
+    .header-info {
+        font-size: 1.3em;
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .header-buttons-left,
+    .header-buttons-right {
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+    }
+    
+    .header-button span {
+        display: none; /* Cache les textes des boutons en version mobile */
+    }
+    
+    .header-icon {
+        margin-right: 0;
+    }
+}
